@@ -15,7 +15,6 @@ const Dashboard = async () => {
     getFiles({ types: [], limit: 10 }),
     getTotalSpaceUsed(),
   ]);
-  console.log(files, totalSpace)
 
   // Get usage summary
   const usageSummary = getUsageSummary(totalSpace);
