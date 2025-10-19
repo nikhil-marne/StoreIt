@@ -7,9 +7,48 @@
   ### A Modern Cloud Storage Management Platform
   
   Built with Next.js 15 | Powered by Appwrite | Styled with Tailwind CSS
-  
-  [Report Bug](https://github.com/nikhil-marne/StoreIt/issues) • [Request Feature](https://github.com/nikhil-marne/StoreIt/issues)
+
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://store-it-alpha-topaz.vercel.app/)
+[![Vercel](https://img.shields.io/badge/deployed%20on-vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
+
+[View Demo](https://store-it-alpha-topaz.vercel.app/) •
+[Report Bug](https://github.com/nikhil-marne/StoreIt/issues) •
+[Request Feature](https://github.com/nikhil-marne/StoreIt/issues)
+
 </div>
+
+---
+
+## 📸 Screenshots
+
+### Dashboard View
+
+![Dashboard](./public/screenshots/dashboard.png) _Modern dashboard with storage
+analytics and recent files_
+
+### Images Gallery
+
+![Images](./public/screenshots/images.png) _Browse and manage your images_
+
+### File Actions
+
+![File Actions](./public/screenshots/file-actions.png) _Rename, share, download,
+and delete files_
+
+### File Sharing
+
+![Share Files](./public/screenshots/share.png) _Share files with other users via
+email_
+
+### File Details
+
+![File Details](./public/screenshots/details.png) _View detailed information
+about your files_
+
+### Search Functionality
+
+![Search](./public/screenshots/search.png) _Quickly find files with real-time
+search_
 
 ---
 
@@ -22,6 +61,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Environment Variables](#environment-variables)
+- [Deployment](#deployment)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -181,6 +221,11 @@ Before you begin, ensure you have the following installed:
 
    e. Set up appropriate permissions for collections and storage
 
+   f. **Add platform for localhost:**
+
+   - Go to Settings → Platforms → Add Platform → Web App
+   - Hostname: `localhost`
+
 4. **Configure environment variables**
 
    Create a `.env.local` file in the root directory and add the following:
@@ -208,6 +253,58 @@ Before you begin, ensure you have the following installed:
 6. **Open your browser**
 
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🌐 Deployment
+
+### Deploy to Vercel
+
+This project is deployed on Vercel. Follow these steps to deploy your own
+instance:
+
+1. **Push your code to GitHub**
+
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Import to Vercel**
+
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
+   - Import your GitHub repository
+   - Vercel will auto-detect Next.js settings
+
+3. **Add Environment Variables**
+
+   In Vercel project settings, add all environment variables from your
+   `.env.local`:
+
+   - `NEXT_PUBLIC_APPWRITE_ENDPOINT`
+   - `NEXT_PUBLIC_APPWRITE_PROJECT`
+   - `NEXT_PUBLIC_APPWRITE_DATABASE`
+   - `NEXT_PUBLIC_APPWRITE_USERS_COLLECTION`
+   - `NEXT_PUBLIC_APPWRITE_FILES_COLLECTION`
+   - `NEXT_PUBLIC_APPWRITE_BUCKET`
+   - `NEXT_APPWRITE_KEY`
+
+4. **Configure Appwrite for Production**
+
+   In your Appwrite Console:
+
+   - Go to Settings → Platforms → Add Platform → Web App
+   - Add your Vercel domain (e.g., `your-app.vercel.app`)
+   - Add wildcard for previews: `*.vercel.app`
+
+5. **Deploy**
+   - Click "Deploy"
+   - Your app will be live in minutes!
+
+**Live Demo:**
+[https://store-it-alpha-topaz.vercel.app/](https://store-it-alpha-topaz.vercel.app/)
 
 ---
 
@@ -250,7 +347,8 @@ StoreIt/
 │   │   └── index.ts         # Appwrite client setup
 │   └── utils.ts             # Utility functions
 ├── public/
-│   └── assets/              # Static assets (icons, images)
+│   ├── assets/              # Static assets (icons, images)
+│   └── screenshots/         # App screenshots
 ├── types/
 │   └── index.d.ts           # TypeScript type definitions
 ├── .env.local               # Environment variables (create this)
@@ -277,7 +375,10 @@ StoreIt/
 
 - **Rename**: Click the three-dot menu → Select "Rename"
 - **Share**: Click the three-dot menu → Select "Share" → Enter email addresses
+- **Download**: Click the three-dot menu → Select "Download"
 - **Delete**: Click the three-dot menu → Select "Delete" → Confirm
+- **Details**: Click the three-dot menu → Select "Details" to view file
+  information
 
 ### Viewing Storage Analytics
 
@@ -289,7 +390,15 @@ StoreIt/
 
 - Use the search bar in the header
 - Search works across all file names
-- Results update in real-time
+- Results update in real-time as you type
+
+### File Categories
+
+- **Documents** - PDF, DOC, DOCX, TXT, XLS, XLSX, CSV
+- **Images** - JPG, JPEG, PNG, GIF, SVG, WEBP
+- **Media** - MP4, AVI, MOV, MKV, WEBM
+- **Audio** - MP3, WAV, OGG, M4A
+- **Others** - All other file types
 
 ---
 
@@ -320,6 +429,9 @@ Nikhil Marne - [@nikhil-marne](https://github.com/nikhil-marne)
 Project Link:
 [https://github.com/nikhil-marne/StoreIt](https://github.com/nikhil-marne/StoreIt)
 
+Live Demo:
+[https://store-it-alpha-topaz.vercel.app/](https://store-it-alpha-topaz.vercel.app/)
+
 ---
 
 ## 🙏 Acknowledgments
@@ -329,6 +441,7 @@ Project Link:
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Shadcn/ui](https://ui.shadcn.com/)
 - [Lucide Icons](https://lucide.dev/)
+- [Vercel](https://vercel.com/) - For seamless deployment
 
 ---
 
